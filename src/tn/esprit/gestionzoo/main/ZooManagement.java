@@ -1,11 +1,17 @@
 package tn.esprit.gestionzoo.main;
 
+<<<<<<< HEAD
 import tn.esprit.gestionzoo.entities.*;
+=======
+import tn.esprit.gestionzoo.entities.Animal;
+import tn.esprit.gestionzoo.entities.Zoo;
+>>>>>>> 46297305998348ba92be8310d22d767b2979d195
 
 import java.util.Scanner;
 
 public class ZooManagement {
     public static void  main(String args[]){
+<<<<<<< HEAD
 
         Dolphin doufa = new Dolphin("doufa", "a7la", 8, true, "banzart", 46);
         Penguin batrik = new Penguin("Spheniscidae", "HappyFeet", 3, false, "Antarctica", 2.5f);
@@ -19,6 +25,10 @@ public class ZooManagement {
         doufa.swim();
         bahouri.swim();
         /*
+=======
+        Scanner scan = new Scanner(System.in) ;
+
+>>>>>>> 46297305998348ba92be8310d22d767b2979d195
         Zoo myZoo = new Zoo("belveder","tunis");
         Zoo myZoo2 = new Zoo("chami","tozeur");
         Zoo emptyZoo = new Zoo(" ","empty") ;
@@ -35,7 +45,10 @@ public class ZooManagement {
         System.out.println(myZoo.addAnimal(new Animal("carniv","",14,false)));
         System.out.println(myZoo.removeAnimal(loup));
         System.out.println(myZoo);
+<<<<<<< HEAD
 
          */
+=======
+>>>>>>> 46297305998348ba92be8310d22d767b2979d195
     }
 }
