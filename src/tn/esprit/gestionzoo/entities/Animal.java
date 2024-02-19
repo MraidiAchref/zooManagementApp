@@ -6,12 +6,9 @@ public class Animal {
     private int age ;
     private boolean isMammal ;
 
-<<<<<<< HEAD
     public Animal() {
     }
 
-=======
->>>>>>> 46297305998348ba92be8310d22d767b2979d195
     public Animal(String family,
                   String name,
                   int age,
