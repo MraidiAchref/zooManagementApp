@@ -10,7 +10,8 @@ public class Zoo {
     private int nbrAnimals ;
     final int NBR_CAGE =25;
 
-
+    private Aquatic[]  aquaticAnimals = new Aquatic[10] ;
+    private int nbrAquaAnimals = 0 ;
 
 
     public Zoo(String name, String city ) {
@@ -84,6 +85,16 @@ public class Zoo {
         }
     }
 
+    public void addAquaticAnimal(Aquatic aquatic) {
+        if (aquatic != null && this.nbrAquaAnimals <10) {
+            aquaticAnimals[nbrAquaAnimals++] = aquatic ;
+        }
+    }
+
+    public Aquatic[] getAquaticAnimals() {
+        return aquaticAnimals;
+    }
+
     @Override
     public String toString() {
         return "tn.esprit.gestionzoo.entities.Zoo{" +
@@ -91,6 +102,7 @@ public class Zoo {
                 ", name='" + name + '\'' +
                 ", city='" + city + '\'' +
                 ", nbrCages=" + NBR_CAGE +
+                ",aquatic animmals =" +Arrays.toString(aquaticAnimals)+
                 '}';
     }
 

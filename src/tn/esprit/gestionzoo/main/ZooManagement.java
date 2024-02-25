@@ -2,6 +2,7 @@ package tn.esprit.gestionzoo.main;
 
 import tn.esprit.gestionzoo.entities.*;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ZooManagement {
@@ -18,9 +19,22 @@ public class ZooManagement {
         bahouri.swim();
         doufa.swim();
         bahouri.swim();
-        /*
+
+
         Zoo myZoo = new Zoo("belveder","tunis");
-        Zoo myZoo2 = new Zoo("chami","tozeur");
+        myZoo.addAquaticAnimal(bahouri);
+        myZoo.addAquaticAnimal(doufa);
+        for (Aquatic aqua : myZoo.getAquaticAnimals()){
+            if (aqua != null) {
+            aqua.swim();
+            }
+        }
+        //System.out.println( Arrays.toString(myZoo.getAquaticAnimals()) );
+        System.out.println(myZoo);
+
+
+
+        /*Zoo myZoo2 = new Zoo("chami","tozeur");
         Zoo emptyZoo = new Zoo(" ","empty") ;
 
         Animal lion = new Animal("carniv","",15,true) ;
