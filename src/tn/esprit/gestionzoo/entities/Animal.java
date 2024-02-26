@@ -1,10 +1,10 @@
 package tn.esprit.gestionzoo.entities;
 
 public class Animal {
-    private String family ;
-    private String name ;
-    private int age ;
-    private boolean isMammal ;
+    protected String family ;
+    protected String name ;
+    protected int age ;
+    protected boolean isMammal ;
 
     public Animal() {
     }
@@ -27,10 +27,14 @@ public class Animal {
         return this.name ;
     }
 
+    public int getAge() {
+        return age;
+    }
 
     @Override
     public String toString() {
-        return "tn.esprit.gestionzoo.entities.Animal{" +
+
+        return "Animal{" +
                 "family='" + family + '\'' +
                 ", name='" + name + '\'' +
                 ", age=" + age +

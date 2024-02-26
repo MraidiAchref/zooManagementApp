@@ -10,8 +10,8 @@ public class Zoo {
     private int nbrAnimals ;
     final int NBR_CAGE =25;
 
-    private Aquatic[]  aquaticAnimals = new Aquatic[10] ;
-    private int nbrAquaAnimals = 0 ;
+    private Aquatic[]  aquaticAnimals ;
+    private int nbrAquaAnimals ;
 
 
     public Zoo(String name, String city ) {
@@ -25,7 +25,8 @@ public class Zoo {
             this.city = city;
 
         }
-
+        this.aquaticAnimals = new Aquatic[10] ;
+        this.nbrAquaAnimals = 0 ;
 
     }
 
@@ -84,7 +85,29 @@ public class Zoo {
             return null ;
         }
     }
+    public void displayNumberOfAquaticsByType(){
+        int nbrDolphin =0, nbrPenguin =0 ;
+        for (int i =0 ; i<nbrAquaAnimals ; i++) {
+            if (aquaticAnimals[i] instanceof Penguin) nbrPenguin++ ;
+            else if (aquaticAnimals[i] instanceof Dolphin) nbrDolphin++ ;
+        }
+        System.out.println("Nombre des dauphins dans le zoo : "+nbrDolphin);
+        System.out.println("Nombre des pengouins dans le zoo : "+nbrPenguin);
+    }
 
+    public int getNbrAquaAnimals() {
+        return nbrAquaAnimals;
+    }
+
+    public float maxPenguinSwimmingDepth(){
+        float max = 0f ;
+        for (Aquatic aquaAnim : aquaticAnimals ){
+            if (aquaAnim instanceof Penguin peng && peng.getSwimmingDepth() > max){
+                max = peng.getSwimmingDepth() ;
+            }
+        }
+        return max ;
+    }
     public void addAquaticAnimal(Aquatic aquatic) {
         if (aquatic != null && this.nbrAquaAnimals <10) {
             aquaticAnimals[nbrAquaAnimals++] = aquatic ;
@@ -97,12 +120,24 @@ public class Zoo {
 
     @Override
     public String toString() {
-        return "tn.esprit.gestionzoo.entities.Zoo{" +
-                "animals=" + Arrays.toString(animals) +
+        String aquaAnim ="";
+        for (Aquatic aqua : aquaticAnimals){
+            if (aqua != null){
+                aquaAnim += aqua.toString()  +'\n';
+            }
+        }
+        String animalStr ="";
+        for (Animal anim : animals){
+            if (anim != null){
+                animalStr += anim.toString() +'\n' ;
+            }
+        }
+        return "Zoo{" +
                 ", name='" + name + '\'' +
                 ", city='" + city + '\'' +
-                ", nbrCages=" + NBR_CAGE +
-                ",aquatic animmals =" +Arrays.toString(aquaticAnimals)+
+                ", nbrCages= " + NBR_CAGE +
+                animalStr +
+                ",\n aquatic animmals =" +aquaAnim+
                 '}';
     }
 
