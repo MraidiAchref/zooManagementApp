@@ -1,6 +1,7 @@
 package tn.esprit.gestionzoo.entities;
 
-import java.util.Arrays;
+import tn.esprit.gestionzoo.main.exceptionsHandlers.InvalideAgeException;
+import tn.esprit.gestionzoo.main.exceptionsHandlers.ZooFullException;
 
 public class Zoo {
     private Animal[] animals ;
@@ -55,13 +56,23 @@ public class Zoo {
     }
 
 
-    public boolean addAnimal(Animal animal ){
+    public void addAnimal(Animal animal) throws ZooFullException {
+        try {
+            if (nbrAnimals >= NBR_CAGE) {
+                throw new ZooFullException("Zoo plein ");
+            }
+            if(animal.age <0 ){
+                throw new InvalideAgeException("l'age de l'animal est negatif");
+            }
 
-        if (searchAnimal(animal) != -1 || this.isZooFull()) return false ;
-        animals[nbrAnimals++] = animal;
-        
-        return true ;
-
+            if (searchAnimal(animal) != -1) {
+                System.out.println("Animal redendant ");
+                return;
+            }
+            animals[nbrAnimals++] = animal;
+        }catch(ZooFullException | InvalideAgeException e){
+            System.out.println(e.getMessage());
+        }
     }
     public boolean removeAnimal(Animal animal){
         int searchIndex = searchAnimal(animal) ;

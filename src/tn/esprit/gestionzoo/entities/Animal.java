@@ -13,14 +13,12 @@ public class Animal {
                   String name,
                   int age,
                   boolean isMammal) {
-        if (age < 0 ) {
-            System.out.println("Un animal ne peut pas avoir un âge négatif ");
-        }else {
+
             this.family = family;
             this.name = name;
             this.age = age;
             this.isMammal = isMammal;
-        }
+
 
     }
     public String getName(){
