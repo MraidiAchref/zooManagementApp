@@ -3,8 +3,28 @@ package tn.esprit.gestionzoo.main;
 import tn.esprit.gestionzoo.entities.*;
 import tn.esprit.gestionzoo.main.exceptionsHandlers.ZooFullException;
 
+import javax.swing.plaf.basic.BasicGraphicsUtils;
+
 public class ZooManagement {
     public static void  main(String args[]) throws ZooFullException {
+
+        Terrestrial bagra = new Terrestrial("vache","halouba",6,true,4);
+        Dolphin doufa = new Dolphin("doufa", "a7la", 8, true, "banzart", 46);
+        Penguin batrik = new Penguin("Spheniscidae", "HappyFeet", 3, false, "Antarctica", 2.5f);
+
+        doufa.eatMeat(Food.MEAT);
+        System.out.println("**************");
+
+        batrik.eatMeat(Food.PLANT);
+        batrik.eatMeat(Food.MEAT);
+        System.out.println("**************");
+
+        bagra.eatPlant(Food.PLANT);
+        bagra.eatMeat(Food.MEAT);
+        bagra.eatPlantAndMeat(Food.BOTH);
+
+
+
 
         /*Dolphin doufa = new Dolphin("doufa", "a7la", 8, true, "banzart", 46);
         Penguin batrik = new Penguin("Spheniscidae", "HappyFeet", 3, false, "Antarctica", 2.5f);
@@ -12,8 +32,8 @@ public class ZooManagement {
         Penguin malouli = new Penguin("Spheniscidae", "HappyFeet", 3, false, "Antarctica", 1f);
         Terrestrial bagra = new Terrestrial("vache","halouba",6,true,4);
     */
-        Zoo myZoo = new Zoo("belveder","tunis");
-        myZoo.addAnimal(new Dolphin("doufa", "a7la", -8, true, "banzart", 46));
+       // Zoo myZoo = new Zoo("belveder","tunis");
+       // myZoo.addAnimal(new Dolphin("doufa", "a7la", -8, true, "banzart", 46));
 
 
 

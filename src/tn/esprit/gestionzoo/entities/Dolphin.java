@@ -23,4 +23,11 @@ public class Dolphin extends Aquatic{
                 "swimmingSpeed=" + swimmingSpeed +
                 "} " ;
     }
+
+    @Override
+    public void eatMeat(Food meat) {
+        if(meat.equals(Food.MEAT)){
+            System.out.println("meat pour le dauphin !");
+        }
+    }
 }

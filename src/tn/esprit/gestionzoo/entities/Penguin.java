@@ -1,5 +1,7 @@
 package tn.esprit.gestionzoo.entities;
 
+import java.sql.SQLOutput;
+
 public class Penguin extends Aquatic {
     protected float swimmingDepth ;
 
@@ -25,5 +27,12 @@ public class Penguin extends Aquatic {
         return "Penguin{" +super.toString() +
                 "swimmingDepth=" + swimmingDepth +
                 '}';
+    }
+
+    @Override
+    public void eatMeat(Food meat) {
+        if(meat.equals(Food.MEAT)){
+            System.out.println("meat pour le penguin !");
+        }
     }
 }
